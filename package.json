@@ -7,28 +7,28 @@
   "dependencies": {
     "babel-runtime": "6.6.1",
     "bluebird": "3.3.5",
-    "body-parser": "1.15.0",
+    "body-parser": "1.18.2",
     "compression": "^1.6.1",
     "cookie-parser": "1.4.1",
     "dotenv": "^2.0.0",
     "element-closest": "^2.0.1",
-    "express": "4.13.4",
+    "express": "4.16.0",
     "express-force-ssl": "^0.3.1",
-    "express-jwt": "3.3.0",
+    "express-jwt": "5.3.0",
     "fastclick": "1.0.6",
     "fbjs": "0.8.1",
     "google-map-react": "^0.11.2",
     "history": "2.1.0",
     "isomorphic-style-loader": "1.0.0",
     "jade": "1.11.0",
-    "jsonwebtoken": "5.7.0",
+    "jsonwebtoken": "7.4.1",
     "moment": "^2.11.2",
     "node-fetch": "1.5.1",
     "node-uuid": "^1.4.7",
     "normalizr": "^2.0.1",
     "passport": "0.3.2",
     "passport-google-oauth20": "^1.0.0",
-    "pg": "4.5.1",
+    "pg": "4.5.7",
     "pg-native": "^1.10.0",
     "pretty-error": "2.0.0",
     "react": "^15.0.1",
@@ -48,12 +48,13 @@
     "redux-thunk": "^1.0.3",
     "request": "^2.71.0",
     "reselect": "^2.3.0",
-    "sequelize": "^3.19.3",
-    "sequelize-cli": "^2.3.1",
+    "sequelize": "^4.17.2",
+    "sequelize-cli": "^5.0.1",
     "serialize-javascript": "^1.2.0",
     "source-map-support": "0.4.0",
     "whatwg-fetch": "0.11.0",
-    "ws": "^1.0.1"
+    "ws": "^1.0.1",
+    "snyk": "^1.165.1"
   },
   "devDependencies": {
     "assets-webpack-plugin": "^3.4.0",
@@ -164,7 +165,12 @@
       "jsx-a11y/aria-role": 0,
       "jsx-a11y/img-has-alt": 0,
       "jsx-a11y/img-redundant-alt": 0,
-      "no-restricted-syntax": [2, "DebuggerStatement", "LabeledStatement", "WithStatement"],
+      "no-restricted-syntax": [
+        2,
+        "DebuggerStatement",
+        "LabeledStatement",
+        "WithStatement"
+      ],
       "no-underscore-dangle": 0,
       "no-param-reassign": 0,
       "global-require": 0,
@@ -206,6 +212,9 @@
     "bundle": "babel-node tools/run bundle",
     "build": "babel-node tools/run build",
     "deploy": "babel-node tools/run deploy",
-    "start": "babel-node tools/run start"
-  }
+    "start": "babel-node tools/run start",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
