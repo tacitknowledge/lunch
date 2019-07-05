@@ -53,7 +53,8 @@
     "serialize-javascript": "^1.2.0",
     "source-map-support": "0.4.0",
     "whatwg-fetch": "0.11.0",
-    "ws": "^1.0.1"
+    "ws": "^1.0.1",
+    "snyk": "^1.192.0"
   },
   "devDependencies": {
     "assets-webpack-plugin": "^3.4.0",
@@ -164,7 +165,12 @@
       "jsx-a11y/aria-role": 0,
       "jsx-a11y/img-has-alt": 0,
       "jsx-a11y/img-redundant-alt": 0,
-      "no-restricted-syntax": [2, "DebuggerStatement", "LabeledStatement", "WithStatement"],
+      "no-restricted-syntax": [
+        2,
+        "DebuggerStatement",
+        "LabeledStatement",
+        "WithStatement"
+      ],
       "no-underscore-dangle": 0,
       "no-param-reassign": 0,
       "global-require": 0,
@@ -206,6 +212,9 @@
     "bundle": "babel-node tools/run bundle",
     "build": "babel-node tools/run build",
     "deploy": "babel-node tools/run deploy",
-    "start": "babel-node tools/run start"
-  }
+    "start": "babel-node tools/run start",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
